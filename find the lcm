@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+int Find_LCM(int,int,int);
+int main()
+{
+    int num1,num2,lcm=0;
+    printf("Input first number:");
+    scanf("%d",&num1);
+    printf("\nInput second number:");
+    scanf("%d",&num2);
+    lcm=(num1<num2)?num2:num1;
+    printf("\nLCM of %d and %d=%d",num1,num2,Find_LCM(num1,num2,lcm));
+    return 0;
+}
+int Find_LCM(int n,int p,int r)
+{if(r%n==0&&r%p==0)
+return r;
+else{
+return Find_LCM(n,p,++r);
+}
+}
